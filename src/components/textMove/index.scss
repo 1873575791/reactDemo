@@ -1,0 +1,11 @@
+.wrap{
+    height: 30px;
+    width: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    #copy{
+        white-space: nowrap;
+        display: inline-block;
+    }
+}

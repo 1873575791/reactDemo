@@ -1,0 +1,80 @@
+.DateCom {
+  background: #ffffff;
+
+  .DateComHeader {
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E8E8E8;
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333333;
+    }
+
+    .DateComHeaderOpe {
+      display: flex;
+
+      .icon {
+        font-size: 32px;
+        margin-right: 20px;
+      }
+
+      .active {
+        color: #1863FF;
+      }
+    }
+  }
+
+  .DateComList {
+    padding: 14px;
+
+    .DateComFilter {
+      border-bottom: 1px solid #E8E8E8;
+
+      .adverFilterBtn {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+    }
+
+    .DateComTable {
+      margin-top: 40px;
+
+      .pagination {
+        display: flex;
+        justify-content: end;
+        margin-top: 10px;
+      }
+
+      .textColor {
+        color: #0186fe;
+        cursor: pointer;
+      }
+
+      .textA{
+        border: 1px solid rgba(255, 165, 30, .4);
+        background: rgba(255, 165, 30, .2);
+        color: rgba(255, 165, 30, 1);
+      }
+      .textB{
+        border: 1px solid rgba(24, 99, 255, .4);
+        background: rgba(24, 99, 255, .2);
+        color: rgba(24, 99, 255, 1);
+      }
+      .textC{
+        border: 1px solid rgba(0, 193, 102, .4);
+        background: rgba(0, 193, 102, .2);
+        color: rgba(0, 193, 102, 1);
+      }
+      .textS{
+        border: 1px solid rgba(255, 79, 97, .4);
+        background: rgba(255, 79, 97, .2);
+        color: rgba(255, 79, 97, 1);
+      }
+    }
+  }
+}
