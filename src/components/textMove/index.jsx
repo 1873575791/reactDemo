@@ -12,7 +12,6 @@ export default class TextMove extends PureComponent {
     };
   }
   componentDidMount() {
-    console.log(this.state.text);
     this.move();
   }
   move = () => {
@@ -30,7 +29,7 @@ export default class TextMove extends PureComponent {
         distance = distance - 1;
       }
       box.style.transform = "translateX(" + distance + "px)";
-    }, 50);
+    }, 30);
   };
 
   componentWillUnmount(){

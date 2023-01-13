@@ -42,7 +42,6 @@ class Audio extends Component {
     const { id } = this.props;
     const audio = document.getElementById(`audio${id}`);
     audio.pause();
-    console.log(audio.pause())
     this.setState({
       isPlay: false,
     });

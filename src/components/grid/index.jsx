@@ -33,8 +33,8 @@ export default function Grid() {
         width={width}
         style={{height: height}}
       >
-        <div className="box" isResizable={false} key="a">
-          <div>a</div>
+        <div className="box" key="a">
+          <div draggable={false}>a</div>
         </div>
         <div className="box" key="b">b</div>
         <div className="box" key="c">c</div>
