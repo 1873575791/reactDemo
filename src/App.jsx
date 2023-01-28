@@ -1,5 +1,8 @@
 import React from "react";
-import TextMove from "./components/textMove";
+// import socket from './socket';
+// import { DndProvider } from 'react-dnd';
+// import { HTML5Backend } from 'react-dnd-html5-backend'
+// import TextMove from "./components/textMove";
 // import MyEditor from "./components/Editor";
 // import Grid from "./components/grid";
 // import PDF from "./components/PDF";
@@ -11,10 +14,15 @@ import TextMove from "./components/textMove";
 // import Loading from "./components/loading";
 // import Time from "./components/time";
 // import Clock from "./components/clock";
-import Video from "./components/video";
-import wanhao from './asstes/腕豪.mp4'
+// import Video from "./components/video";
+// import wanhao from './asstes/腕豪.mp4'
 // import NewVideo from "./components/newVideo";
+// import Home from "./components/listTwo";
+// import List from "./components/list";
+import Drage from "./components/drage";
+// import DND from "./components/dnd";
 import "./App.scss";
+import { useEffect } from "react";
 
 export default function App() {
   // const onReady = (play) => {
@@ -26,10 +34,19 @@ export default function App() {
   // const getPointerPosition = (el, event) =>{
   //   console.log(el, event)
   // }
-
+//   useEffect(() =>{
+//     console.log(socket.connected); // socket是否与服务器连接
+// console.log(socket.disconnected); // socket是否与服务器断开连接
+//     socket.open()
+//     console.log(1)
+//   },[])
   return (
     <div className="box">
-      <TextMove lists={[{elevatorName: '这是我写的视频播放组件，厉害吧！'}]}/>
+      <Drage />
+      {/* <DndProvider backend={ HTML5Backend }>
+        <DND />
+      </DndProvider> */}
+      {/* <TextMove lists={[{elevatorName: '这是我写的视频播放组件，厉害吧！'}]}/> */}
       {/* <MyEditor content={'<p></p>'} getEditorHtml={getEditorHtml} readOnly={false} isPreview={true} /> */}
       {/* <Grid /> */}
       {/* <PDF /> */}
@@ -40,7 +57,7 @@ export default function App() {
       {/* <Loading /> */}
       {/* <Time /> */}
       {/* <Clock /> */}
-      <Video id={'123'} url={wanhao} />
+      {/* <Video id={'123'} url={wanhao} /> */}
       {/* <NewVideo
         onReady={onReady}
         options={{
@@ -73,6 +90,38 @@ export default function App() {
           getPointerPosition: getPointerPosition
         }}
       /> */}
+      {/* <List data={ [
+        {
+          newIndex: 1,
+          color: "red"
+        },
+
+        {
+          newIndex: 2,
+          color: "green"
+        },
+
+        {
+          newIndex: 3,
+          color: "blue"
+        },
+
+        {
+          newIndex: 4,
+          color: "yellow"
+        },
+
+        {
+          newIndex: 5,
+          color: "orange"
+        },
+
+        {
+          newIndex: 6,
+          color: "black"
+        }
+      ]} /> */}
+      {/* <Home /> */}
     </div>
   );
 }

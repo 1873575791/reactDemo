@@ -1,0 +1,25 @@
+.list{
+  width: 500px;
+  height: 500px;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: baseline;
+
+  .list-item{
+    width: 100px;
+    height: 100px;
+    background: green;
+    margin: 3px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+  }
+  .move {
+    width: 100px;
+    height: 100px;
+    background: rgb(0, 128, 0, .5);
+  }
+}

@@ -1,0 +1,45 @@
+.drag-up {
+  // animation: dragup ease 0.2s 1;
+  animation-fill-mode: forwards;
+  border: solid 2px #cccccc;
+}
+
+.drag-down {
+  // animation: dragdown ease 0.2s 1;
+  animation-fill-mode: forwards;
+  border: solid 2px #cccccc;
+}
+
+@keyframes dragup {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-right: 500px;
+  }
+}
+
+@keyframes dragdown {
+  from {
+    margin-right: 0px;
+    margin-left: 500px;
+  }
+  to {
+    margin-right: 500px;
+    margin-left: 0px;
+  }
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  transition: 5s;
+}
+
+.createElement {
+  width: 500px;
+  height: 60px;
+  border: 1px solid red;
+  background: #000;
+}
