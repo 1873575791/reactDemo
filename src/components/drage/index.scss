@@ -6,9 +6,10 @@
   display: flex;
   flex-wrap: wrap;
   align-content: baseline;
+  overflow: hidden;
 
   .list-item{
-    width: 100px;
+    width: calc((499px - 26px) / 4);
     height: 100px;
     background: green;
     margin: 3px;
@@ -18,7 +19,7 @@
     line-height: 50px;
   }
   .move {
-    width: 100px;
+    width: calc((499px - 26px) / 4);
     height: 100px;
     background: rgb(0, 128, 0, .5);
   }
