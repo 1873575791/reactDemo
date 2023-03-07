@@ -1,4 +1,6 @@
 import React from "react";
+import { useTranslation } from 'react-i18next'
+// import mp4 from './asstes/demo.mp4';
 // import socket from './socket';
 // import { DndProvider } from 'react-dnd';
 // import { HTML5Backend } from 'react-dnd-html5-backend'
@@ -19,12 +21,16 @@ import React from "react";
 // import NewVideo from "./components/newVideo";
 // import Home from "./components/listTwo";
 // import List from "./components/list";
-import Drage from "./components/drage";
+// import Drage from "./components/drage";
 // import DND from "./components/dnd";
+// import StudyDnD from "./components/studyDnD";
+// import Locale from "./components/locale";
+// import Wavesurfer from "./components/wavesurfer";
+import Study from "./components/study";
 import "./App.scss";
-import { useEffect } from "react";
 
 export default function App() {
+  const { i18n } = useTranslation()
   // const onReady = (play) => {
   //   console.log("play====", play);
   //   // videoRef.current = play
@@ -42,12 +48,16 @@ export default function App() {
 //   },[])
   return (
     <div className="box">
-      <Drage />
-      {/* <DndProvider backend={ HTML5Backend }>
-        <DND />
-      </DndProvider> */}
+      <Study />
+      {/* <Locale i18n={i18n} /> */}
+      {/* <Drage /> */}
+      {/* <DndProvider backend={ HTML5Backend }> */}
+        {/* <DND /> */}
+        {/* <StudyDnD /> */}
+      {/* </DndProvider> */}
+      {/* <Wavesurfer /> */}
       {/* <TextMove lists={[{elevatorName: '这是我写的视频播放组件，厉害吧！'}]}/> */}
-      {/* <MyEditor content={'<p></p>'} getEditorHtml={getEditorHtml} readOnly={false} isPreview={true} /> */}
+      {/* <MyEditor content={'<p></p>'} getEditorHtml={(value) => console.log(value)} readOnly={false} isPreview={true} /> */}
       {/* <Grid /> */}
       {/* <PDF /> */}
       {/* <DateCom /> */}
@@ -57,7 +67,7 @@ export default function App() {
       {/* <Loading /> */}
       {/* <Time /> */}
       {/* <Clock /> */}
-      {/* <Video id={'123'} url={wanhao} /> */}
+      {/* <Video id={'123'} url={mp4} /> */}
       {/* <NewVideo
         onReady={onReady}
         options={{

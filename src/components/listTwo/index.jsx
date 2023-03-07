@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useEffect } from 'react';
-import DndSortable, {arrayMove} from "react-dragger-sort";
+import DndSortable from "react-dragger-sort";
 
 const Home = (props) => {
   const [part1, setPart1] = useState([1, 2, 3, 4, 5])

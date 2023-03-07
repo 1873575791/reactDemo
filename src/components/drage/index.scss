@@ -3,14 +3,11 @@
   height: 500px;
   border: 1px solid #ccc;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: baseline;
-  overflow: hidden;
+  overflow: auto;
 
   .list-item{
-    width: calc((499px - 26px) / 4);
-    height: 100px;
+    width: 100%;
+    height: 50px;
     background: green;
     margin: 3px;
     font-size: 30px;
@@ -19,8 +16,8 @@
     line-height: 50px;
   }
   .move {
-    width: calc((499px - 26px) / 4);
-    height: 100px;
+    width: 100%;
+    height: 50px;
     background: rgb(0, 128, 0, .5);
   }
 }

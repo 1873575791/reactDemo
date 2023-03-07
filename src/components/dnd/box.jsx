@@ -43,6 +43,7 @@ const Box = ({bg, category, cardList, changeCardList}) => {
              */
 
             if (monitor.didDrop()) {
+                console.log(monitor.getItem())
                 cardList.splice(uselessIndex, 1, { ...monitor.getItem(), id: id++ });
             } else {
                 cardList.splice(uselessIndex, 1);

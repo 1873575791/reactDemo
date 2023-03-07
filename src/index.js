@@ -6,13 +6,14 @@ import App from './App';
 import zhCN from 'antd/locale/zh_CN';
 import reportWebVitals from './reportWebVitals';
 import { ConfigProvider } from 'antd';
+import './locals/index'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ConfigProvider locale={zhCN}>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
     <App />
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
   </ConfigProvider>
 );
 

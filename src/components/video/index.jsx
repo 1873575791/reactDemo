@@ -16,7 +16,7 @@ export default function Video({ url, id }) {
   const [isPlay, setIsPlay] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(0);
-  const [fileList, setFileList] = useState({});
+  const [fileList, setFileList] = useState({url: url});
   const [loading, setLoading] = useState(false); // 上传loading
   const [bufferTime, setBufferTime] = useState(0); // 缓冲进度
   const [bufferWidth, setBufferWidth] = useState(0); // 缓冲进度
@@ -250,7 +250,8 @@ export default function Video({ url, id }) {
           onWaiting={onWaiting}
           onLoadedMetadata={onLoadedMetadata}
           onProgress={onProgress}
-          onPlaying={() => console.log(555)}
+          onPlaying={() => console.log('因缓冲而暂停或停止')}
+          onStalled={() => console.log('媒体数据不可用')}
           className="videoPlayer"
         />
         <div className="videoConsole">
@@ -315,7 +316,7 @@ export default function Video({ url, id }) {
         </Button>
         <span style={{ marginLeft: "10px" }}>仅支持mp4格式</span>
       </Uploads>
-      <div className="progressBar" onMouseEnter={() => console.log(1)}>
+      <div className="progressBar">
         <div>
           <div
             className="allTime"
