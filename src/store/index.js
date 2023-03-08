@@ -1,6 +1,3 @@
-export let stateAll = {
-  list: []
-};
 const EventCenter = (function(){
   var events = {};
   function on(event, handler){
@@ -29,14 +26,4 @@ const EventCenter = (function(){
   }
 })();
 
-export const { on, fire, off, events } = EventCenter;
-
-// export default EventCenter
-
-EventCenter.on('event', function(data){
-  console.log(data);
-  stateAll.list.push(data)
-}, 'key');
-EventCenter.fire('event', '这是展示内容1');
-EventCenter.fire('event', '这是展示内容2');
-console.log(EventCenter.events, stateAll);
+export default EventCenter;

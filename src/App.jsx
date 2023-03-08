@@ -26,7 +26,8 @@ import { useTranslation } from 'react-i18next'
 // import StudyDnD from "./components/studyDnD";
 // import Locale from "./components/locale";
 // import Wavesurfer from "./components/wavesurfer";
-import Study from "./components/study";
+// import Study from "./components/study";
+import Animation from "./components/animation";
 import "./App.scss";
 
 export default function App() {
@@ -48,7 +49,8 @@ export default function App() {
 //   },[])
   return (
     <div className="box">
-      <Study />
+      <Animation/>
+      {/* <Study /> */}
       {/* <Locale i18n={i18n} /> */}
       {/* <Drage /> */}
       {/* <DndProvider backend={ HTML5Backend }> */}

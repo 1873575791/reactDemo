@@ -1,0 +1,150 @@
+.item1{
+  height: 50px;
+  background: blue;
+  margin-bottom: 10px;
+  animation: dom 1s 1 forwards;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.item2{
+  height: 50px;
+  background: blue;
+  margin-bottom: 10px;
+  animation: dom 1.5s 1 forwards;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.item3{
+  height: 50px;
+  background: blue;
+  margin-bottom: 10px;
+  animation: dom 2s 1 forwards;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.item4{
+  height: 50px;
+  background: blue;
+  margin-bottom: 10px;
+  animation: dom 2.5s 1 forwards;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+.item5{
+  height: 50px;
+  background: blue;
+  margin-bottom: 10px;
+  animation: dom 3s 1 forwards;
+  color: #fff;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+@keyframes dom{
+  from {
+    opacity: 0;
+    top: 100px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0px
+  }
+}
+
+.ball{
+  width: 100px;
+  height: 100px;
+  background: darkgoldenrod;
+  border-radius: 50%;
+  animation-name: ball;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  position: relative;
+  margin: 0 auto;
+}
+
+@keyframes ball{
+  0% {
+    top: 0px;
+  }
+
+  50%{
+    top: 100px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  100%{
+    top: 0px;
+  }
+}
+
+.add{
+  display: flex;
+  justify-content: center;
+  > span{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: blue;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    position: relative;
+    animation-name: span;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  }
+}
+
+@keyframes span{
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+
+  20% {
+    top: -40px;
+    left: -30px;
+    opacity: 1;
+  }
+
+  50% {
+    left: -35px;
+    opacity: 1;
+  }
+
+  99% {
+    left: -40px;
+    opacity: 1;
+  }
+
+  100%{
+    top: 100px;
+    left: -50px;
+    opacity: 0;
+  }
+}
