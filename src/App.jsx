@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 // import mp4 from './asstes/demo.mp4';
 // import socket from './socket';
 // import { DndProvider } from 'react-dnd';
@@ -31,7 +31,7 @@ import Animation from "./components/animation";
 import "./App.scss";
 
 export default function App() {
-  const { i18n } = useTranslation()
+  // const { i18n } = useTranslation()
   // const onReady = (play) => {
   //   console.log("play====", play);
   //   // videoRef.current = play

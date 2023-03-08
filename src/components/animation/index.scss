@@ -1,15 +1,22 @@
-.main{
-  width: 500px;
-  height: 100%;
-  border: 1px solid #000;
-  margin: 0 auto;
+.header {
+  height: 50px;
+  background: red;
+  color: aliceblue;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+}
 
-  .header{
-    height: 50px;
-    background: red;
-    color: aliceblue;
-    font-size: 24px;
-    text-align: center;
-    line-height: 50px;
-  }
+.content {
+  height: 50px;
+  background: red;
+  color: aliceblue;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 100px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
