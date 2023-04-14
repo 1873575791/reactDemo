@@ -1,0 +1,18 @@
+.move {
+  opacity: 0.2;
+}
+
+.scroll {
+  width: 200px;
+  height: 50px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  margin: 50px auto 0;
+  // transition: 1s;
+  >div {
+    height: 30px;
+    background: #aaa;
+    margin: 0 5px;
+  }
+}

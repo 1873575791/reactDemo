@@ -11,7 +11,7 @@ import React from "react";
 // import DateCom from "./components/DateCom";
 // import CreateDate from "./components/createDate";
 // import Audio from "./components/audio";
-// import mp4 from './asstes/巡光.mp3'
+// import mp4 from './asstes/demo.mp4'
 // import ComparisonObject from "./components/ComparisonObject";
 // import Loading from "./components/loading";
 // import Time from "./components/time";
@@ -21,13 +21,16 @@ import React from "react";
 // import NewVideo from "./components/newVideo";
 // import Home from "./components/listTwo";
 // import List from "./components/list";
-// import Drage from "./components/drage";
+import Drage from "./components/drage";
 // import DND from "./components/dnd";
 // import StudyDnD from "./components/studyDnD";
 // import Locale from "./components/locale";
 // import Wavesurfer from "./components/wavesurfer";
 // import Study from "./components/study";
-import Animation from "./components/animation";
+// import Animation from "./components/animation";
+// import Echarts from "./components/echarts";
+// import DndKit from "./components/dndKit";
+// import ReactBeautifulDnd from "./components/ReactBeautifulDnd";
 import "./App.scss";
 
 export default function App() {
@@ -49,10 +52,13 @@ export default function App() {
 //   },[])
   return (
     <div className="box">
-      <Animation/>
+      {/* <ReactBeautifulDnd /> */}
+      {/* <DndKit /> */}
+      {/* <Echarts /> */}
+      {/* <Animation/> */}
       {/* <Study /> */}
       {/* <Locale i18n={i18n} /> */}
-      {/* <Drage /> */}
+      <Drage />
       {/* <DndProvider backend={ HTML5Backend }> */}
         {/* <DND /> */}
         {/* <StudyDnD /> */}

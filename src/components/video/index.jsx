@@ -16,7 +16,7 @@ export default function Video({ url, id }) {
   const [isPlay, setIsPlay] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(0);
-  const [fileList, setFileList] = useState({url: url});
+  const [fileList, setFileList] = useState({});
   const [loading, setLoading] = useState(false); // 上传loading
   const [bufferTime, setBufferTime] = useState(0); // 缓冲进度
   const [bufferWidth, setBufferWidth] = useState(0); // 缓冲进度
@@ -158,18 +158,19 @@ export default function Video({ url, id }) {
     const num = width / allTime;
     setIconLeft(currentTime * num);
     setWatchWidth(currentTime * num);
-  }, [currentTime, allTime]);
+  }, [currentTime]);
 
   // 监听缓冲进度
   useEffect(() => {
     const width = progress.current.getBoundingClientRect().width;
     const num = width / allTime;
     setBufferWidth(bufferTime * num);
-  }, [bufferTime, allTime]);
+  }, [bufferTime]);
 
   // 缓冲时
   const onProgress = () => {
     const audio = document.getElementById(`video${id}`);
+    console.log('视频缓冲数据');
     if (audio.readyState === 4){
       setBufferTime(audio.buffered.end(0));
     }
@@ -242,9 +243,10 @@ export default function Video({ url, id }) {
       <div className="video">
         <video
           id={`video${id}`}
-          src={fileList.url}
-          // src={'https://osstest.jrdaimao.com/file/1673514022225215.mp4'}
-          preload={"auto"}
+          // src={fileList.url}
+          src={url}
+          // controls
+          preload={"metadata"}
           onCanPlay={onCanPlay}
           onTimeUpdate={onTimeUpdate}
           onWaiting={onWaiting}

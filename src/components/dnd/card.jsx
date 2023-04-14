@@ -7,7 +7,7 @@ import React, { useRef, useMemo } from 'react';
 import { XYCoord } from 'dnd-core';
 import { DragSourceMonitor, DropTargetMonitor, useDrag, useDrop } from 'react-dnd';
 
-const Card = ({ bg, category, index, moveCard, id }) => {
+const Card = ({ bg, category, index, moveCard, id, type, twoChange, twoList, dropType }) => {
     const ref = useRef(null);
 
     const [{ isDragging }, drag, dragPreview] = useDrag({
@@ -15,8 +15,34 @@ const Card = ({ bg, category, index, moveCard, id }) => {
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),
-        // item 中包含 index 属性，则在 drop 组件 hover 和 drop 是可以根据第一个参数获取到 index 值
-        item: { index },
+        item: { bg, category, index, moveCard, id, type },
+        end(item, monitor) {
+
+            // const uselessIndex = cardList.findIndex((item) => item.id === -1);
+
+            // /**
+            //  * 拖拽结束时，判断是否将拖拽元素放入了目标接收组件中
+            //  *  1、如果是，则使用真正传入的 box 元素代替占位元素
+            //  *  2、如果否，则将占位元素删除
+            //  */
+            
+            // if (type !== dropType){
+            //     const data = twoList.push(item);
+            //     twoChange(data);
+            //     console.log(type, dropType, twoList);
+            // }
+
+            // if (monitor.didDrop()) {
+            //     cardList.splice(uselessIndex, 1, { ...monitor.getItem(), id: id++ });
+            //     // cardTwoList.splice(uselessIndex, 1, { ...monitor.getItem(), id: id++ });
+            // } else {
+            //     cardList.splice(uselessIndex, 1);
+            //     // cardTwoList.splice(uselessIndex, 1);
+            // }
+            // // 更新 cardList 数据源
+            // changeCardList(cardList);
+            // // changeCardList(cardTwoList);
+        },
     });
 
     const [, drop] = useDrop({
@@ -55,17 +81,17 @@ const Card = ({ bg, category, index, moveCard, id }) => {
              */
 
             // 向下拖动
-            if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-                return;
-            }
+            // if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+            //     return;
+            // }
 
-            // 向上拖动
-            if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
-                return;
-            }
+            // // 向上拖动
+            // if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+            //     return;
+            // }
 
             // 执行 move 回调函数
-            moveCard(dragIndex, hoverIndex);
+            moveCard(dragIndex, hoverIndex, item.type, item);
 
             /**
              * 如果拖拽的组件为 Box，则 dragIndex 为 undefined，此时不对 item 的 index 进行修改
@@ -83,16 +109,18 @@ const Card = ({ bg, category, index, moveCard, id }) => {
         margin: '16px 6px',
         // Card 为占位元素是，透明度 0.4，拖拽状态时透明度 0.2，正常情况透明度为 1
         opacity: id === -1 ? 0.4 : isDragging ? 0.2 : 1,
-        padding: '20px 0px',
         verticalAlign: 40,
-        width: 288,
+        // width: 288,
+        textAlign: 'center'
+        // transform: `scale(1) translate(${ getSourceClientOffset?.x }px, ${ getSourceClientOffset?.y }px)`
     }), [bg, id, isDragging]);
 
     /**
      * 使用 drag 和 drop 对 ref 进行包裹，则组件既可以进行拖拽也可以接收拖拽组件
      * 使用 dragPreview 包裹组件，可以实现拖动时预览该组件的效果
      */
-    dragPreview(drop(ref));
+    drag(drop(ref));
+    dragPreview(ref);
 
     return (
         <div ref={ref} style={style}>

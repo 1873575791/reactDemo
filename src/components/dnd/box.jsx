@@ -8,33 +8,29 @@ import { DragSourceMonitor, useDrag } from 'react-dnd';
 
 let id = 1;
 
-const Box = ({bg, category, cardList, changeCardList}) => {
-
-    const style = {
-        background: bg,
-        display: 'inline-block',
-        margin: 20,
-        padding: '16px 30px',
-        width: 100,
-        cursor: 'move'
-    }
+const Box = ({bg, category, cardList, changeCardList, cardTwoList, changeCardListtwo, type, setDropType}) => {
     
     const box = {
         bg,
         category,
     };
-    const [, drag] = useDrag({
+    const [{ isDragging }, drag] = useDrag({
         type: 'card',
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        }),
         item() {
             const useless = cardList.find((item) => item.id === -1);
             // 拖拽开始时，向 cardList 数据源中插入一个占位的元素，如果占位元素已经存在，不再重复插入
             if (!useless) {
                 changeCardList([{ bg: "aqua", category: '放这里', id: -1 }, ...cardList]);
+                changeCardListtwo([{ bg: "aqua", category: '放这里', id: -1 }, ...cardTwoList]);
             }
             return box;
         },
-        end(_, monitor) {
+        end(item, monitor) {
             const uselessIndex = cardList.findIndex((item) => item.id === -1);
+            const uselessIndexTwo = cardTwoList.findIndex((item) => item.id === -1);
 
             /**
              * 拖拽结束时，判断是否将拖拽元素放入了目标接收组件中
@@ -43,18 +39,37 @@ const Box = ({bg, category, cardList, changeCardList}) => {
              */
 
             if (monitor.didDrop()) {
-                console.log(monitor.getItem())
-                cardList.splice(uselessIndex, 1, { ...monitor.getItem(), id: id++ });
+                if (type === 'card') {
+                    cardList.splice(uselessIndex, 1, { ...monitor.getItem(), id: id++ });
+                    cardTwoList.splice(uselessIndexTwo, 1);
+                } else {
+                    cardTwoList.splice(uselessIndexTwo, 1, { ...monitor.getItem(), id: id++ });
+                    cardList.splice(uselessIndex, 1);
+                }
+
             } else {
                 cardList.splice(uselessIndex, 1);
+                cardTwoList.splice(uselessIndexTwo, 1);
             }
             // 更新 cardList 数据源
             changeCardList(cardList);
+            changeCardListtwo(cardTwoList);
+            setDropType(null)
         },
         
     });
+    const style = {
+        background: bg,
+        display: 'inline-block',
+        margin: 20,
+        padding: '16px 30px',
+        cursor: 'move',
+        // translate: getDifferenceFromInitialOffset(),
+        // transition: 'all 100ms'
+        opacity: isDragging ? 0.2 : 1,
+    }
     return (
-        <div ref={ drag } style={ style }>{ category }</div>
+        <div ref={ drag } style={ style } className={isDragging ? 'move' : ''}>{ category }</div>
     )
 };
 
