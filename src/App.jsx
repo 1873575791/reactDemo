@@ -21,7 +21,7 @@ import React from "react";
 // import NewVideo from "./components/newVideo";
 // import Home from "./components/listTwo";
 // import List from "./components/list";
-import Drage from "./components/drage";
+// import Drage from "./components/drage";
 // import DND from "./components/dnd";
 // import StudyDnD from "./components/studyDnD";
 // import Locale from "./components/locale";
@@ -31,6 +31,7 @@ import Drage from "./components/drage";
 // import Echarts from "./components/echarts";
 // import DndKit from "./components/dndKit";
 // import ReactBeautifulDnd from "./components/ReactBeautifulDnd";
+import Code from "./components/code";
 import "./App.scss";
 
 export default function App() {
@@ -52,13 +53,14 @@ export default function App() {
 //   },[])
   return (
     <div className="box">
+      <Code />
       {/* <ReactBeautifulDnd /> */}
       {/* <DndKit /> */}
       {/* <Echarts /> */}
       {/* <Animation/> */}
       {/* <Study /> */}
       {/* <Locale i18n={i18n} /> */}
-      <Drage />
+      {/* <Drage /> */}
       {/* <DndProvider backend={ HTML5Backend }> */}
         {/* <DND /> */}
         {/* <StudyDnD /> */}

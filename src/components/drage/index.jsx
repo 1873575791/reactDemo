@@ -1,10 +1,5 @@
 import React, { useRef, useLayoutEffect, useEffect } from "react";
 import { QRCode } from 'antd';
-import AceEditor from "react-ace";
-
-import "ace-builds/src-noconflict/mode-json5";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/ext-language_tools";
 
 import 'animate.css'
 
@@ -135,20 +130,9 @@ const last = (eleAll)=> {
   }
 }
 
-const onChange =(newValue) => {
-  console.log("change", newValue);
-}
-
 
   return <div>
     <QRCode value="https://baidu.com/" />
-    <AceEditor
-    mode="java"
-    theme="github"
-    onChange={onChange}
-    name="UNIQUE_ID_OF_DIV"
-    editorProps={{ $blockScrolling: true }}
-  />
 
     <div 
     className="list"
