@@ -4,6 +4,7 @@ import "ace-builds/src-noconflict/mode-json";
 import "ace-builds/src-noconflict/theme-github";
 import { useState } from "react";
 import "ace-builds/src-noconflict/ext-language_tools";
+import 'ace-builds/webpack-resolver';
 
 export default function Code() {
   const [value, setValue] = useState();
