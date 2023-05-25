@@ -34,9 +34,6 @@ const Container = () => {
     const dom = document.querySelector(".scroll");
     if (dom.scrollLeft > 0) {
       dom.scrollTo(dom.scrollLeft - 50, 0);
-      dom.animate({
-        scrollLeft: dom.scrollLeft - 50
-      }, 1000)
     }
   };
 
@@ -44,9 +41,6 @@ const Container = () => {
     const dom = document.querySelector(".scroll");
     if (dom.scrollLeft < dom.scrollWidth - dom.clientWidth) {
       dom.scrollTo(dom.scrollLeft + 50, 0);
-      dom.animate({
-        scrollLeft: dom.scrollLeft + 50
-      }, 1000)
     }
   };
 
@@ -59,7 +53,7 @@ const Container = () => {
           <div style={{}}>{it.category}</div>
         ))}
       </div>
-      {boxs.map((item) => (
+      {/* {boxs.map((item) => (
         <Box
           key={item.id}
           type={dropType}
@@ -88,7 +82,7 @@ const Container = () => {
         setDropType={setDropType}
         type="cardTwo"
         dropType={dropType}
-      />
+      /> */}
     </div>
   );
 };

@@ -19,7 +19,6 @@ export default function Code() {
     }catch(e){
       alert('输入格式不正确');
     }
-    
   }
   return (
     <div>

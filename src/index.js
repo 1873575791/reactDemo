@@ -1,19 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import "antd/dist/reset.css";
-import App from './App';
-import zhCN from 'antd/locale/zh_CN';
-import reportWebVitals from './reportWebVitals';
-import { ConfigProvider } from 'antd';
-import './locals/index'
+import App from "./App";
+import zhCN from "antd/locale/zh_CN";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { ConfigProvider } from "antd";
+import Routes from "./router/index";
+import "./locals/index";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ConfigProvider locale={zhCN}>
-  {/* <React.StrictMode> */}
-    <App />
-  {/* </React.StrictMode> */}
+    {/* <React.StrictMode> */}
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+    {/* </React.StrictMode> */}
   </ConfigProvider>
 );
 

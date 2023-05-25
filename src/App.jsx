@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from 'react-router-dom';
 // import { useTranslation } from 'react-i18next'
 // import mp4 from './asstes/demo.mp4';
 // import socket from './socket';
@@ -31,29 +32,13 @@ import React from "react";
 // import Echarts from "./components/echarts";
 // import DndKit from "./components/dndKit";
 // import ReactBeautifulDnd from "./components/ReactBeautifulDnd";
-import Code from "./components/code";
-import "./App.scss";
+// import Code from "./components/code";
 
 export default function App() {
-  // const { i18n } = useTranslation()
-  // const onReady = (play) => {
-  //   console.log("play====", play);
-  //   // videoRef.current = play
-
-  // };
-
-  // const getPointerPosition = (el, event) =>{
-  //   console.log(el, event)
-  // }
-//   useEffect(() =>{
-//     console.log(socket.connected); // socket是否与服务器连接
-// console.log(socket.disconnected); // socket是否与服务器断开连接
-//     socket.open()
-//     console.log(1)
-//   },[])
   return (
     <div className="box">
-      <Code />
+      <Outlet />
+      {/* <Code /> */}
       {/* <ReactBeautifulDnd /> */}
       {/* <DndKit /> */}
       {/* <Echarts /> */}

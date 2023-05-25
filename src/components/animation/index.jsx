@@ -17,8 +17,7 @@ export default function Animation() {
     wow.init();
   }, []);
   return (
-    <div className="main">
-      <div style={{ height: '1500px' }}></div>
+    <div>
       <div
         className="wow animate__jackInTheBox header"
         // data-wow-duration="2s"
