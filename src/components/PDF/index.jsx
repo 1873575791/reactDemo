@@ -9,10 +9,14 @@ export default function PDF(){
   };
   return <Document
   renderMode="canvas"
-  file={pdfUrl}
+  file={'https://invtest.nntest.cn/fp/G37AuWf2waIQ4aITwMwm0TWym8iz7yKy_TrAm-H99EzGLmQvrPWAFxPjlrRiwFmXmF30ZMyCF3hOQKKTrwpwaQ.pdf'}
   loading={<div>加载中，请等待!</div>}
   onLoadSuccess={onLoadSuccess}
   noData={null}
+  options={{
+    cMapUrl: 'cmaps/',
+    cMapPacked: true,
+  }}
 >
   {new Array(pageTotal + 1).fill("").map((_, index) => {
     return (

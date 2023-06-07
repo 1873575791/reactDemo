@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import React from 'react';
-import Code from '../components/code'
-import Animation from "../components/animation";
-import Index from '../pages/index'
+import React, { lazy } from 'react';
+
+const Index = lazy(() => import('../pages/index'));
+const Animation = lazy(() => import('../components/animation'));
+const Code = lazy(() => import('../components/code'));
+const PDFView = lazy(() => import('../components/PDF'));
+const Grid = lazy(() => import('../components/grid'));
+const VirtualScroll = lazy(() => import('../components/virtualScroll'));
 
 export const routes = [
     {
@@ -20,6 +24,21 @@ export const routes = [
                 title: '页面滚动动画',
                 element: <Animation />,
             },
+            {
+                path: '/index/PDF',
+                title: 'PDF预览',
+                element: <PDFView />,
+            },
+            {
+                path: '/index/Grid',
+                title: 'Grid布局',
+                element: <Grid />,
+            },
+            {
+                path: '/index/virtualScroll',
+                title: '虚拟滚动',
+                element: <VirtualScroll />,
+            }
         ],
     },
 

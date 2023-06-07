@@ -19,6 +19,21 @@ export default function Index() {
       key: '/index/animation',
       children: <></>,
     },
+    {
+      label: 'PDF预览',
+      key: '/index/PDF',
+      children: <></>,
+    },
+    {
+      label: 'Grid布局',
+      key: '/index/Grid',
+      children: <></>,
+    },
+    {
+      label: '虚拟滚动',
+      key: '/index/virtualScroll',
+      children: <></>,
+    },
   ]
 
   const onChange = (key) => {

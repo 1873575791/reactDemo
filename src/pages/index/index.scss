@@ -1,6 +1,11 @@
-.main {
+.ant-tabs {
+  position: fixed;
+  top: 0;
+  background: #fff;
   width: 100%;
-  height: calc(100vh - 62px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  z-index: 9999;
+}
+
+.main {
+  padding-top: 62px;
 }

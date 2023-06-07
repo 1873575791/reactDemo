@@ -10,14 +10,14 @@ export default function Animation() {
     const wow = new WOW({
       boxClass: "wow",
       nimateClass: "animated", // animation css class (default is animated)
-      offset: 0, // distance to the element when triggering the animation (default is 0)
+      offset: 0,
       mobile: true, // trigger animations on mobile devices (default is true)
       live: false,
     });
     wow.init();
   }, []);
   return (
-    <div>
+    <div className="animation">
       <div
         className="wow animate__jackInTheBox header"
         // data-wow-duration="2s"
