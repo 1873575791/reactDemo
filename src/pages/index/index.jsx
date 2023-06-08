@@ -34,6 +34,11 @@ export default function Index() {
       key: '/index/virtualScroll',
       children: <></>,
     },
+    {
+      label: '我的元素',
+      key: '/index/myDom',
+      children: <></>,
+    },
   ]
 
   const onChange = (key) => {

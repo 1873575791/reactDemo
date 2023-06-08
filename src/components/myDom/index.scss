@@ -1,0 +1,13 @@
+dialog {
+  top:calc(50% - 250px);
+  left:  calc(50% - 250px);
+  border: none;
+  .modal {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+dialog::backdrop{
+  background-color: rgba(0, 0, 0, 0.5);
+}

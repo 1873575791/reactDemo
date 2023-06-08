@@ -7,6 +7,7 @@ const Code = lazy(() => import('../components/code'));
 const PDFView = lazy(() => import('../components/PDF'));
 const Grid = lazy(() => import('../components/grid'));
 const VirtualScroll = lazy(() => import('../components/virtualScroll'));
+const MyDom = lazy(() => import('../components/myDom'));
 
 export const routes = [
     {
@@ -38,6 +39,11 @@ export const routes = [
                 path: '/index/virtualScroll',
                 title: '虚拟滚动',
                 element: <VirtualScroll />,
+            },
+            {
+                path: '/index/myDom',
+                title: '我的元素',
+                element: <MyDom />,
             }
         ],
     },
