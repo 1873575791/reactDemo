@@ -14,11 +14,11 @@ export default function Index() {
       key: '/index/code',
       children: <></>,
     },
-    {
-      label: '页面滚动动画',
-      key: '/index/animation',
-      children: <></>,
-    },
+    // {
+    //   label: '页面滚动动画',
+    //   key: '/index/animation',
+    //   children: <></>,
+    // },
     {
       label: 'PDF预览',
       key: '/index/PDF',
