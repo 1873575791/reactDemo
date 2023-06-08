@@ -42,7 +42,7 @@ export const routes = [
             },
             {
                 path: '/index/myDom',
-                title: '我的元素',
+                title: '弹框和锚点',
                 element: <MyDom />,
             }
         ],

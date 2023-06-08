@@ -35,7 +35,7 @@ export default function Index() {
       children: <></>,
     },
     {
-      label: '我的元素',
+      label: '弹框和锚点',
       key: '/index/myDom',
       children: <></>,
     },
